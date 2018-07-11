@@ -1,0 +1,26 @@
+<script>
+    $(document).ready(function () {
+      var apiUrl = "/api/v0/user/ianpaisley99/files/tree/";
+      var home = "/home/ianpaisley99/";
+      var input = $('.autocomplete_path');
+      var completer = new Anywhere.Files.AutocompletePath({
+        input: input,
+        initialPath: home,
+        apiUrl: apiUrl,
+      });
+
+      var filesRootUrl = "/user/ianpaisley99/files/";
+      var token = "s2oGDI4JKR3WFGBcFZiKZPUEeUhYxkuB";
+      Anywhere2.initialize(
+        $('#id_edit_file_button_span')[0],
+        { url: filesRootUrl, token: token, input: input[0]}
+      );
+
+      $('[data-toggle="tooltip"]').tooltip()
+
+      var new_user_steps = [
+        {
+          title: "Welcome to PythonAnywhere!",
+          content: "<p>This tour will give you a quick overview of how the site works.  It only lasts 7 steps.  Promise!<\/p>",
+          placement: "bottom",
+        },
